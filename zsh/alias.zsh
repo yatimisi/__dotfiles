@@ -2,6 +2,9 @@ alias activate='source ./env/bin/activate'
 alias pip-make-list='pip freeze > ./requirements.txt'
 
 alias l='ls -lF'
+alias lll='ls -allF'
+
+alias cls='clear'
 
 alias pp='ping 8.8.8.8'
 alias pd='ping fb.me'
@@ -26,9 +29,6 @@ alias gz='git cz'
 alias git-zip='git archive --format zip -o ../$(fd)-$(git log --pretty=format:"%h" -1).zip HEAD'
 
 alias t='cd /tmp'
-
-alias mygo='cd $GOPATH/src/github.com/arthurc0102'
-alias go-build='go build -o ${PWD##*/}.out'
 
 alias docker-image-clenup='docker rmi $(docker images -f "dangling=true" -q)'
 

@@ -1,10 +1,10 @@
-# Repo: https://github.com/arthurc0102/dotfiles
+# Repo: https://github.com/yatimisi/dotfiles
 set -e
 
 command -v git > /dev/null || { echo "Git not installed"; exit 1; }
 
 if [ ! -d "$HOME/.dotfiles" ]; then
-    git clone https://github.com/arthurc0102/dotfiles.git $HOME/.dotfiles
+    git clone https://github.com/yatimisi/dotfiles.git $HOME/.dotfiles
 fi
 
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
@@ -19,6 +19,8 @@ git submodule update
 if [ ! -d "$HOME/.pip" ]; then
     mkdir $HOME/.pip
 fi
+
+rm -rf $HOME/.zsh $HOME/.zshrc $HOME/.gitconfig $HOME/.pip/pip.conf $HOME/.tmux.conf $HOME/.pypirc $HOME/.czrc
 
 ln -s $HOME/.dotfiles/zsh $HOME/.zsh
 ln -s $HOME/.dotfiles/zshrc.zsh $HOME/.zshrc

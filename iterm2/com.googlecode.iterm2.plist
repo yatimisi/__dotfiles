@@ -1195,7 +1195,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/arthur</string>
+			<string>/Users/yatimisi</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -1897,7 +1897,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/arthur</string>
+			<string>/Users/yatimisi</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2681,7 +2681,7 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/arthur</string>
+			<string>/Users/yatimisi</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
@@ -3518,7 +3518,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/arthur/.dotfiles/iTerm2</string>
+	<string>/Users/yatimisi/.dotfiles/iTerm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
