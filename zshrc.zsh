@@ -50,6 +50,7 @@ antigen apply
 
 ## Load custom settings
 source $HOME/.zsh/alias.zsh
+source $HOME/.dotfiles/scripts/run.zsh
 
 for f in $HOME/.dotfiles/functions/*.sh; do
   source $f;
