@@ -1,37 +1,63 @@
-alias activate='source ./env/bin/activate'
-alias pip-make-list='pip freeze > ./requirements.txt'
+function al() {
+    local option="$1"
 
-alias l='ls -lF'
-alias lll='ls -allF'
+    if [[ $option == 'help' ]] || [[ $option == '' ]]; then
+        printf """usage: al [help]\n"
+        printf "          <command> [<args>]\n"
+        printf "\n"
+        printf "These are common commands used in various situations:\n"
+        printf "\n"
+        printf "   open [name]    Open an alias group\n"
+        printf "   save                Save change\n"
+        printf "   <name>         Print an alias group\n"
+        printf "\n"
+        printf "Alias:\n"
+        ls -1 $HOME/.zsh/alias | sed 's/.zsh//g' | awk '{ print "   "$0 }'
+    elif [[ $option == 'open' ]]; then
+        local aliasName="$2"
+        if [[ $aliasName == '' ]]; then
+            vi $HOME/.zsh/alias.zsh
+        else
+            vi "$HOME/.zsh/alias/$aliasName.zsh"
+        fi
+    elif [[ $option == 'save' ]]; then
+        exec $SHELL
+    elif [ -f "$HOME/.zsh/alias/$option.zsh" ]; then
+        printf "\n"
+        printf "Alias:\n"
+        cat "$HOME/.zsh/alias/$option.zsh" | sed 's/alias /   /g'
+    else
+        printf "Not have $option, please choose the options:\n"
+        ls -1 $HOME/.zsh/alias | sed 's/.zsh//g' | awk '{ print "   "$0 }'
+    fi
+}
 
-alias cls='clear'
+function hp() {
+    local option="$1"
 
-alias pp='ping 8.8.8.8'
-alias pd='ping fb.me'
+    if [[ $option == 'help' ]] || [[ $option == '' ]]; then
+        printf """usage: hp [help]\n"
+        printf "          <command> [<args>]\n"
+        printf "\n"
+        printf "These are common commands used in various situations:\n"
+        printf "\n"
+        printf "   open [Name]     Open an note\n"
+        printf "\n"
+        printf "Notes:\n"
+        ls -1 $HOME/.zsh/notes | awk '{ print "   "$0 }'
+    elif [[ $option == 'open' ]]; then
+        local notesName="$2"
+        if [[ $notesName != '' ]]; then
+            vi "$HOME/.zsh/notes/$notesName.zsh"
+        fi
+    elif [ -f "$HOME/.zsh/notes/$option" ]; then
+        printf "\n"
+        printf "Notes:\n"
+        cat "$HOME/.zsh/notes/$option" | awk '{ print "   "$0 }'
+    else
+        printf "Not have $option, please choose the options:\n"
+        ls -1 $HOME/.zsh/notes | awk '{ print "   "$0 }'
+    fi
+}
 
-alias per='pipenv run'
-alias pes='pipenv shell'
-alias pei='pipenv install'
-
-alias g='git'
-alias gl='git l'
-alias gb='git branch'
-alias gd='git diff'
-alias gs='git status'
-alias gp='git push'
-alias gpp='git pull'
-alias ga='git add'
-alias gcl='git clone'
-alias gaa='git add --all'
-alias gc='git commit -a'
-alias gm='git commit -m'
-alias gmi='git commit -m "feat: Initial commit"'
-alias gz='git cz'
-alias git-zip='git archive --format zip -o ../$(fd)-$(git log --pretty=format:"%h" -1).zip HEAD'
-
-alias t='cd /tmp'
-
-alias docker-image-clenup='docker rmi $(docker images -f "dangling=true" -q)'
-
-alias fd='echo ${PWD##*/}'
-alias tc='python -c "import sys; print(\"\\n\".join(sys.stdin.read().splitlines()), end=\"\")" | pbcopy'
+for f in $HOME/.zsh/alias/*; do source $f; done
