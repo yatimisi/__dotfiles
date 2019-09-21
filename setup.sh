@@ -20,8 +20,9 @@ if [ ! -d "$HOME/.pip" ]; then
     mkdir $HOME/.pip
 fi
 
-rm -rf $HOME/.zsh $HOME/.zshrc $HOME/.gitconfig $HOME/.pip/pip.conf $HOME/.tmux.conf $HOME/.pypirc $HOME/.czrc
+rm -rf $HOME/dotfiles $HOME/.zsh $HOME/.zshrc $HOME/.gitconfig $HOME/.pip/pip.conf $HOME/.tmux.conf $HOME/.pypirc $HOME/.czrc
 
+ln -s $HOME/.dotfiles $HOME/dotfiles
 ln -s $HOME/.dotfiles/zsh $HOME/.zsh
 ln -s $HOME/.dotfiles/zshrc.zsh $HOME/.zshrc
 ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
