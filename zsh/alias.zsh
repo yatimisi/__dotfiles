@@ -25,6 +25,7 @@ alias gcl='git clone'
 alias gaa='git add --all'
 alias gc='git commit -a'
 alias gm='git commit -m'
+alias gmi='git commit -m "feat: Initial commit"'
 alias gz='git cz'
 alias git-zip='git archive --format zip -o ../$(fd)-$(git log --pretty=format:"%h" -1).zip HEAD'
 

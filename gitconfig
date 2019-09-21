@@ -22,7 +22,7 @@
   au = add -u
   ac = add --all
   ec = commit --amend
-  mi = commit -m "feat: Initial commit"
+  mi = commit -m 'feat: Initial commit'
   cl = clone
   master = checkout master
   gps = checkout gh-pages
