@@ -61,11 +61,12 @@ fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 if command -v pipenv 1>/dev/null 2>&1; then
     eval "$(pipenv --completion)"
-    export PIPENV_VENV_IN_PROJECT=true
+    export WORKON_HOME=/tmp/.virtualenvs
 fi
 
 if [ -d "$HOME/.rvm/bin" ]; then
