@@ -66,7 +66,8 @@ fi
 
 if command -v pipenv 1>/dev/null 2>&1; then
     eval "$(pipenv --completion)"
-    export WORKON_HOME=/tmp/.virtualenvs
+    # export WORKON_HOME=/tmp/.virtualenvs
+    export PIPENV_VENV_IN_PROJECT=true
 fi
 
 if [ -d "$HOME/.rvm/bin" ]; then
