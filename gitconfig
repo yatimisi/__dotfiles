@@ -23,3 +23,5 @@
   ss = show
 [include]
   path = ~/.gitconfig.user
+[credential]
+	helper = osxkeychain
