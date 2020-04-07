@@ -1,6 +1,7 @@
 alias g='git'
 alias gl='git l'
 alias gb='git branch'
+alias gco='git checkout'
 alias gd='git diff'
 alias gs='git status'
 alias gp='git push'
@@ -20,5 +21,15 @@ gac() {
     else
       DATE=$(date +%Y/%m/%d-%H:%M:%S)
       git commit -m "update $DATE" # default commit message is `update`
+    fi
+}
+
+gf() {
+    local branch="$1"
+    if [ "$branch" != "" ]
+    then
+        git checkout -b "feature/$branch"
+    else
+        printf "Please input branch_name."
     fi
 }
