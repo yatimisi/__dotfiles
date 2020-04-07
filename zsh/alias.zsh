@@ -14,18 +14,11 @@ function al() {
         printf "Alias:\n"
         ls -1 $HOME/.dotfiles/alias | sed 's/.zsh//g' | awk '{ print "   "$0 }'
     elif [[ $option == 'open' ]]; then
-        local aliasName="$2"
-        if [[ $aliasName == '' ]]; then
-            vi $HOME/.dotfiles/alias.zsh
-        else
-            vi "$HOME/.dotfiles/alias/$aliasName.zsh"
-        fi
+        vim $HOME/.dotfiles/alias.zsh
     elif [[ $option == 'save' ]]; then
         exec $SHELL
     elif [ -f "$HOME/.dotfiles/alias/$option.zsh" ]; then
-        printf "\n"
-        printf "Alias:\n"
-        cat "$HOME/.dotfiles/alias/$option.zsh" | sed 's/alias /   /g'
+        vim "$HOME/.dotfiles/alias/$option.zsh"
     else
         printf "Not have $option, please choose the options:\n"
         ls -1 $HOME/.dotfiles/alias | sed 's/.zsh//g' | awk '{ print "   "$0 }'
