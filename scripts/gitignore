@@ -10,6 +10,17 @@ main() {
 
   if [ "$res" == "404: Not Found" ]; then
     echo "Can not find this kind of gitignore."
+    echo "You can:"
+    echo "C++"
+    echo "C"
+    echo "Dart"
+    echo "Go"
+    echo "Java"
+    echo "Julia"
+    echo "Laravel"
+    echo "Python"
+    echo "Ruby"
+    echo "Rust"
     exit
   fi
 
