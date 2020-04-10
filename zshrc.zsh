@@ -9,6 +9,7 @@ antigen bundle pip
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle web-search
+antigen bundle lukechilds/zsh-nvm
 antigen bundle qoomon/zsh-lazyload
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
