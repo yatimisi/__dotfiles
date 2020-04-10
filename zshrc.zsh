@@ -30,4 +30,13 @@ source "$HOME/.dotfiles/zsh/config.zsh"
 
 for f in $HOME/.dotfiles/zsh/environmentals/*.zsh; do source $f; done
 
-lazyload pyenv python pip pipenv poetry -- 'source "$HOME/.dotfiles/zsh/environmentals/lazyload/python.zsh"'
+load_node() {
+  source "$HOME/.dotfiles/zsh/environmentals/lazyload/node.zsh"
+}
+
+load_python() {
+  source "$HOME/.dotfiles/zsh/environmentals/lazyload/python.zsh"
+}
+
+lazyload nvm node npm npx -- 'load_node'
+lazyload pyenv python pip pipenv -- 'load_python'
