@@ -13,6 +13,8 @@ alias gc='git commit -a'
 alias gm='git commit -m'
 alias gmi='git commit -m "feat: Initial commit"'
 alias gz='git cz'
+alias gn='cp $HOME/.dotfiles/newFile/transform-git-commit.py ./'
+
 gac() {
     git add --all
     if [ "$1" != "" ]
