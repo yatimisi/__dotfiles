@@ -14,7 +14,7 @@ function hp() {
     elif [[ $option == 'open' ]]; then
         local notesName="$2"
         if [[ $notesName != '' ]]; then
-            vi "$HOME/.dotfiles/notes/$notesName.zsh"
+            vi "$HOME/.dotfiles/notes/$notesName"
         fi
     elif [ -f "$HOME/.dotfiles/notes/$option" ]; then
         printf "\n"
