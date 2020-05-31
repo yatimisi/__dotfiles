@@ -1,12 +1,22 @@
+# Base
 docker --version
 docker-compose --version
 
-docker images  # 查看目前 images
+# Image
+docker pull NAME[:TAG|@DIGEST]
+docker images
+docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+# Container
+docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+docker ps
+docker ps -a
+docker attach [OPTIONS] CONTAINER
+    ctrl + P, ctrl + Q
+
+
+
 docker create [OPTIONS] IMAGE [COMMAND] [ARG...]  # 建立 image
-docker rmi [OPTIONS] IMAGE [IMAGE...]  # 刪除 Image
-docker ps  # 查看目前運行的 container
-docker ps -a  # 查看目前全部的 container（ 包含停止狀態的 container ）
-docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]  # 新建並啟動 Container
 docker start [OPTIONS] CONTAINER [CONTAINER...]  # 啟動 Container
 docker stop [OPTIONS] CONTAINER [CONTAINER...]  # 停止 Container
 docker restart [OPTIONS] CONTAINER [CONTAINER...]  # 重新啟動 Container

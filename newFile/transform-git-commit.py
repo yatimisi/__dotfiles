@@ -40,7 +40,7 @@ def getRandomDateList(start, end, lenth):
     return formatDateList(mylist)
 
 
-def main(default, git_hash):
+def main(default, git_hash, is_execute):
     if git_hash == []:
         os.system(
             'git log --pretty=format:"%H" > gitlogEc971d5b54aa973826103e303a96a3c19d0d914c')
@@ -58,10 +58,16 @@ def main(default, git_hash):
         )
 
         if export != '':
-            print(CMD.format(
-                hash=h,
-                export=export,
-            ))
+            if is_execute:
+                os.system(CMD.format(
+                    hash=h,
+                    export=export,
+                ))
+            else:
+                print(CMD.format(
+                    hash=h,
+                    export=export,
+                ))
     os.system('rm gitlogEc971d5b54aa973826103e303a96a3c19d0d914c')
 
 
@@ -75,4 +81,4 @@ if __name__ == '__main__':
 
     git_hash = []
 
-    main(default, git_hash)
+    main(default, git_hash, False)
